@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+!DOCTYPE html>
 <html>
 <head>
     <title>My Portfolio</title>
@@ -10,7 +10,7 @@
         body {
             margin: 0;
             padding: 0;
-            background: linear-gradient(135deg, #f7d774, #8b4513); 
+            background: linear-gradient(135deg, #f7d774, #8b4513);
             font-family: 'Poppins', sans-serif;
         }
 
@@ -30,11 +30,7 @@
         }
 
         .main-content {
-            display: flex;
-            align-items: center;
-            justify-content: center;
             padding: 60px 30px;
-            flex-wrap: wrap;
         }
 
         .profile-pic {
@@ -44,7 +40,6 @@
             object-fit: cover;
             border: 5px solid white;
             box-shadow: 0 4px 12px rgba(0,0,0,0.3);
-            margin-right: 30px;
         }
 
         .intro-text {
@@ -90,14 +85,14 @@
 
         .skill-bar {
             width: 100%;
-            background-color: #e0d8b0; 
+            background-color: #e0d8b0;
             border-radius: 10px;
             overflow: hidden;
         }
 
         .skill-fill {
             height: 20px;
-            background-color: #8B4513; 
+            background-color: #8B4513;
             text-align: right;
             padding-right: 10px;
             line-height: 20px;
@@ -105,170 +100,187 @@
             border-radius: 10px 0 0 10px;
             transition: width 1s ease-in-out;
         }
+
+        @media (max-width: 768px) {
+            .main-content {
+                text-align: center;
+            }
+            .profile-pic {
+                margin: 0 auto 20px auto;
+            }
+            .intro-text {
+                max-width: 100%;
+            }
+        }
+
+        @media (max-width: 576px) {
+            .navbar-brand h1 {
+                font-size: 16px;
+            }
+            .intro-text h2 {
+                font-size: 20px;
+            }
+            .skill-label span {
+                font-size: 14px;
+            }
+        }
     </style>
 
-<script>
-    document.getElementById("contactForm").addEventListener("submit", function(e) {
-        e.preventDefault();
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            document.getElementById("contactForm").addEventListener("submit", function (e) {
+                e.preventDefault();
 
-        const name = document.getElementById("name").value.trim();
-        const email = document.getElementById("email").value.trim();
-        const subject = document.getElementById("subject").value.trim();
-        const message = document.getElementById("message").value.trim();
+                const name = document.getElementById("name").value.trim();
+                const email = document.getElementById("email").value.trim();
+                const message = document.getElementById("message").value.trim();
 
-        if (!name || !email || !subject || !message) {
-            alert("Please fill out all fields before submitting!");
-        } else {
-            alert("Your message has been sent successfully!");
-            // Optional: submit the form here (e.g., via Formspree, EmailJS)
+                if (!name || !email || !message) {
+                    alert("Please fill out all fields before submitting!");
+                } else {
+                    alert("Your message has been sent successfully!");
+                }
+            });
+        });
+
+        function scrollToTop() {
+            window.scrollTo({ top: 0, behavior: 'smooth' });
         }
-    });
-
-    
-    function scrollToTop() {
-        window.scrollTo({ top: 0, behavior: 'smooth' });
-    }
-
-
-
-
-
-</script>
-
+    </script>
 </head>
 <body>
 
-    <nav class="navbar navbar-expand-lg navbar-dark" style="background-color: #8B4513;">
-        <div class="container-fluid">
-            <a class="navbar-brand" href="#">
-                <h1>Ishan Mohammed - An Aspiring Techie!</h1>
-            </a>
+<nav class="navbar navbar-expand-lg navbar-dark" style="background-color: #8B4513;">
+    <div class="container-fluid">
+        <a class="navbar-brand" href="#">
+            <h1>Ishan Mohammed - An Aspiring Techie!</h1>
+        </a>
 
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarContent">
-                <span class="navbar-toggler-icon"></span>
-            </button>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarContent">
+            <span class="navbar-toggler-icon"></span>
+        </button>
 
-            <div class="collapse navbar-collapse justify-content-end" id="navbarContent">
-              <ul class="navbar-nav">
+        <div class="collapse navbar-collapse justify-content-end" id="navbarContent">
+            <ul class="navbar-nav">
                 <li class="nav-item">
                     <a class="nav-link active" href="#" onclick="scrollToTop()">Home</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="https://www.linkedin.com/in/ishan-mohammed-37596932b?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app">LinkedIn</a>
+                    <a class="nav-link" href="https://www.linkedin.com/in/ishan-mohammed-37596932b">LinkedIn</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="https://www.instagram.com/mhd_ishan._22?igsh=ZjVyZGhqeTZ6Zm8x">Instagram</a>
+                    <a class="nav-link" href="https://www.instagram.com/mhd_ishan._22">Instagram</a>
                 </li>
             </ul>
-            </div>
         </div>
-    </nav>
+    </div>
+</nav>
 
-    <div class="main-content">
-        <img src="IMG20250604131421.jpg" alt="My Photo" class="profile-pic">
-        <div class="intro-text">
+<div class="container main-content">
+    <div class="row align-items-center">
+        <div class="col-12 col-md-4 text-center">
+            <img src="IMG20250604131421.jpg" alt="My Photo" class="profile-pic img-fluid">
+        </div>
+        <div class="col-12 col-md-8 intro-text">
             <h2>Hello Everyone!</h2>
             <p>I am Ishan Mohammed, currently pursuing B-Tech in Computer Science and Engineering at College of Engineering Perumon. I have a strong passion for web development, coding, and socializing.</p>
             <p>For contacting me, kindly connect through by clicking any of the below buttons:</p>
-            <a href="https://www.linkedin.com/in/ishan-mohammed-37596932b?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app"><button>LinkedIn</button></a>
-        <a href="https://www.instagram.com/mhd_ishan._22?igsh=ZjVyZGhqeTZ6Zm8x"><button>Instagram</button></a>
+            <a href="https://www.linkedin.com/in/ishan-mohammed-37596932b"><button>LinkedIn</button></a>
+            <a href="https://www.instagram.com/mhd_ishan._22"><button>Instagram</button></a>
+        </div>
+    </div>
+</div>
+
+<div class="skill-section">
+    <center>
+        <h1>Skills I Acquire</h1>
+        <p>I have strong skills in frontend development including HTML, CSS, Bootstrap, JavaScript and enthusiasm for Python and C programming.</p>
+    </center>
+
+    <div class="skill">
+        <div class="skill-label">
+            <span>HTML</span><span>90%</span>
+        </div>
+        <div class="skill-bar">
+            <div class="skill-fill" style="width: 90%;"></div>
         </div>
     </div>
 
-    <div class="skill-section">
-        <center>
-            <h1>Skills I Acquire</h1>
-            <p>I have strong skills in frontend development including HTML, CSS, Bootstrap, JavaScript and enthusiasm for Python and C programming.</p>
-        </center>
-
-        <div class="skill">
-            <div class="skill-label">
-                <span>HTML</span><span>90%</span>
-            </div>
-            <div class="skill-bar">
-                <div class="skill-fill" style="width: 90%;"></div>
-            </div>
+    <div class="skill">
+        <div class="skill-label">
+            <span>CSS</span><span>80%</span>
         </div>
-
-        <div class="skill">
-            <div class="skill-label">
-                <span>CSS</span><span>80%</span>
-            </div>
-            <div class="skill-bar">
-                <div class="skill-fill" style="width: 80%;"></div>
-            </div>
-        </div>
-
-        <div class="skill">
-            <div class="skill-label">
-                <span>JavaScript</span><span>57%</span>
-            </div>
-            <div class="skill-bar">
-                <div class="skill-fill" style="width: 57%;"></div>
-            </div>
-        </div>
-
-        <div class="skill">
-            <div class="skill-label">
-                <span>C Programming</span><span>75%</span>
-            </div>
-            <div class="skill-bar">
-                <div class="skill-fill" style="width: 75%;"></div>
-            </div>
-        </div>
-
-        <div class="skill">
-            <div class="skill-label">
-                <span>Python</span><span>68%</span>
-            </div>
-            <div class="skill-bar">
-                <div class="skill-fill" style="width: 68%;"></div>
-            </div>
+        <div class="skill-bar">
+            <div class="skill-fill" style="width: 80%;"></div>
         </div>
     </div>
 
-    <br>
-    <br>
-    <div style="text-align: center; color: white;">
-      <h1>Achievements</h1>
-      <ul style="list-style-position: inside; display: inline-block; text-align: left; color: white;">
-          <li>Got State and District level Achievements in English Extempore</li>
-          <li>Showcased Anchoring in various college and school events</li>
-          <li>Was present in the school football team</li>
-          <li>Actively involved in various levels of debate competitions</li>
-      </ul>
-  </div>
-          <br>
-          <br>
-  <div style="text-align: center; color: white;">
+    <div class="skill">
+        <div class="skill-label">
+            <span>JavaScript</span><span>57%</span>
+        </div>
+        <div class="skill-bar">
+            <div class="skill-fill" style="width: 57%;"></div>
+        </div>
+    </div>
 
-  <h1>Education</h1>
-  <br>
-  <br>
-  <div class="row justify-content-center g-4">
+    <div class="skill">
+        <div class="skill-label">
+            <span>C Programming</span><span>75%</span>
+        </div>
+        <div class="skill-bar">
+            <div class="skill-fill" style="width: 75%;"></div>
+        </div>
+    </div>
+
+    <div class="skill">
+        <div class="skill-label">
+            <span>Python</span><span>68%</span>
+        </div>
+        <div class="skill-bar">
+            <div class="skill-fill" style="width: 68%;"></div>
+        </div>
+    </div>
+</div>
+
+<br><br>
+<div class="container text-center text-white">
+    <h1>Achievements</h1>
+    <ul class="list-unstyled">
+        <li>Got State and District level Achievements in English Extempore</li>
+        <li>Showcased Anchoring in various college and school events</li>
+        <li>Was present in the school football team</li>
+        <li>Actively involved in various levels of debate competitions</li>
+    </ul>
+</div>
+
+<br><br>
+<div class="container text-center text-white">
+    <h1>Education</h1>
+    <br>
+    <div class="row justify-content-center g-4">
         <div class="col-md-4">
             <div class="p-4 rounded shadow text-white" style="background-color: #8B4513;">
-                <h4> Bachelor of Technology <br> (2024-2028)</h4>
-                <p>Currently, Persuing My Bachelors Degree in  computer Science and<br>Engineering at College of Engineering,Perumon,Kollam.</p>
+                <h4>Bachelor of Technology <br> (2024-2028)</h4>
+                <p>Currently, pursuing B.Tech in Computer Science and Engineering at College of Engineering, Perumon, Kollam.</p>
             </div>
         </div>
         <div class="col-md-4">
             <div class="p-4 rounded shadow text-white" style="background-color: #8B4513;">
                 <h4>Higher Secondary Education <br>(2022-2024)</h4>
-                <p> Secured 90% in CBSE Board Examination from<br>MGM Residential Public School,Kottarakara</p>
+                <p>Secured 90% in CBSE Board Examination from MGM Residential Public School, Kottarakara</p>
             </div>
         </div>
         <div class="col-md-4">
             <div class="p-4 rounded shadow text-white" style="background-color: #8B4513;">
                 <h4>High School Education <br>2022</h4>
-                <p>Secured 95% in ICSE Board Examation from<br>ST.Mary's Residential Public School,Pathanapuram</p>
+                <p>Secured 95% in ICSE Board Examination from ST. Mary's Residential Public School, Pathanapuram</p>
             </div>
         </div>
     </div>
 </div>
 
-<br>
-<br>
+<br><br>
 <div class="container my-5">
     <div class="row justify-content-center">
         <div class="col-md-8">
@@ -283,7 +295,6 @@
                         <label for="email" class="form-label" style="color: black;">Email address</label>
                         <input type="email" class="form-control" id="email" placeholder="name@example.com">
                     </div>
-                    
                     <div class="mb-3">
                         <label for="message" class="form-label" style="color: black;">Message</label>
                         <textarea class="form-control" id="message" rows="4" placeholder="Type your message here..."></textarea>
@@ -297,22 +308,14 @@
     </div>
 </div>
 
-<br>
-<br>
-
 <center>
-
-
-<div style="text-align: center; margin-top: 50px;">
-    <button onclick="scrollToTop()" style="color: white; background-color: #8B4513; padding: 10px 20px; border: none; border-radius: 6px;">
-        Go to the top
-    </button>
-</div>
-
-
+    <div style="text-align: center; margin-top: 50px;">
+        <button onclick="scrollToTop()" style="color: white; background-color: #8B4513; padding: 10px 20px; border: none; border-radius: 6px;">
+            Go to the top
+        </button>
+    </div>
 </center>
-  
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"></script>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"></script>
 </body>
 </html>
-
